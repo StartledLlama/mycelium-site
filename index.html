@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mycelium — coming soon</title>
+<meta name="description" content="Mycelium — an independent game studio. Site coming soon.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Mulish:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --soil:#14100D; --spore:#ECE4D4; --spore-dim:#A1947F; --glow:#CC9A4E;
+  --display:'Fraunces',Georgia,serif; --body:'Mulish',system-ui,sans-serif;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{
+  min-height:100svh; background:var(--soil); color:var(--spore);
+  font-family:var(--body); -webkit-font-smoothing:antialiased;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:2rem; gap:1.4rem;
+}
+.eyebrow{ font-size:.78rem; letter-spacing:.24em; text-transform:uppercase; color:var(--glow); }
+h1{
+  font-family:var(--display); font-weight:500;
+  font-size:clamp(3rem,14vw,6.5rem); line-height:1; letter-spacing:-.02em;
+}
+.dot{ color:var(--glow); }
+.line{ color:var(--spore-dim); font-size:clamp(1rem,3vw,1.25rem); max-width:34ch; }
+.mail{
+  color:var(--glow); border-bottom:1px solid var(--glow);
+  padding-bottom:.15rem; text-decoration:none; transition:opacity .25s;
+}
+.mail:hover{ opacity:.7; }
+:focus-visible{ outline:2px solid var(--glow); outline-offset:3px; }
+
+/* a single, quiet pulse — the only "alive" touch on the placeholder */
+.pulse{
+  width:7px; height:7px; border-radius:50%; background:var(--glow);
+  animation:breathe 3s ease-in-out infinite;
+}
+@keyframes breathe{ 0%,100%{ opacity:.3; transform:scale(1); } 50%{ opacity:1; transform:scale(1.4); } }
+@media (prefers-reduced-motion:reduce){ .pulse{ animation:none; opacity:.7; } }
+</style>
+</head>
+<body>
+  <p class="eyebrow">Independent game studio</p>
+  <h1>Mycelium<span class="dot">.</span></h1>
+  <span class="pulse" aria-hidden="true"></span>
+  <p class="line">Something's growing here. The full site is on its way.</p>
+  <a class="mail" href="mailto:hello@mycelium.org.uk">hello@mycelium.org.uk</a>
+</body>
+</html>
