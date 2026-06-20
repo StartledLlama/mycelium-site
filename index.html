@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mycelium — Independent Game Studio</title>
-<meta name="description" content="Mycelium is an independent game studio making games we genuinely love to play. Founded by Connor, Ravi &amp; Rhys.">
+<meta name="description" content="Mycelium is an independent game studio of six, making games we genuinely love to play. Founded by Connor, Ravi &amp; Rhys.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,20 +24,16 @@
   --display:   'Fraunces', Georgia, serif;
   --body:      'Mulish', system-ui, sans-serif;
   --max:       1120px;
-  --section-gap: 7rem;
+  --gap:       7rem;
 }
 
 /* ── reset ── */
 *, *::before, *::after{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
 body{
-  background:var(--soil);
-  color:var(--spore);
-  font-family:var(--body);
-  -webkit-font-smoothing:antialiased;
-  line-height:1.7;
+  background:var(--soil); color:var(--spore);
+  font-family:var(--body); -webkit-font-smoothing:antialiased; line-height:1.7;
 }
-img{ display:block; max-width:100%; }
 a{ color:inherit; text-decoration:none; }
 :focus-visible{ outline:2px solid var(--glow); outline-offset:3px; }
 
@@ -51,41 +47,29 @@ a{ color:inherit; text-decoration:none; }
   font-family:var(--display); font-weight:400;
   font-size:clamp(2rem,5vw,3rem); line-height:1.1; letter-spacing:-.02em;
 }
-.divider{
-  width:40px; height:2px; background:var(--glow);
-  border:none; margin-top:1.2rem; margin-bottom:0;
-}
+.divider{ width:40px; height:2px; background:var(--glow); border:none; margin-block:1.2rem; }
 
 /* ── NAV ── */
 nav{
   position:fixed; inset-block-start:0; inset-inline:0; z-index:100;
-  background:rgba(20,16,13,.88); backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  background:rgba(20,16,13,.9); backdrop-filter:blur(12px);
   border-bottom:1px solid var(--soil-top);
 }
 .nav-inner{
-  display:flex; align-items:center; justify-content:space-between;
-  padding-block:.9rem;
+  display:flex; align-items:center; justify-content:space-between; padding-block:.9rem;
 }
 .nav-logo{
   font-family:var(--display); font-size:1.3rem; font-weight:500;
   letter-spacing:-.02em; color:var(--spore);
 }
 .nav-logo span{ color:var(--glow); }
-.nav-links{
-  display:flex; gap:2rem; list-style:none;
-}
+.nav-links{ display:flex; gap:2rem; list-style:none; }
 .nav-links a{
   font-size:.85rem; font-weight:500; letter-spacing:.06em;
   color:var(--spore-dim); transition:color .2s;
 }
 .nav-links a:hover{ color:var(--spore); }
-
-/* mobile nav */
-.nav-toggle{
-  display:none; background:none; border:none; cursor:pointer;
-  color:var(--spore); padding:.4rem;
-}
+.nav-toggle{ display:none; background:none; border:none; cursor:pointer; color:var(--spore); padding:.4rem; }
 .nav-toggle svg{ display:block; }
 
 @media(max-width:640px){
@@ -103,10 +87,8 @@ nav{
 
 /* ── HERO ── */
 #hero{
-  min-height:100svh;
-  display:grid; place-items:center;
-  padding-block:8rem 4rem;
-  position:relative; overflow:hidden;
+  min-height:100svh; display:grid; place-items:center;
+  padding-block:8rem 4rem; position:relative; overflow:hidden;
 }
 .hero-bg{
   position:absolute; inset:0; pointer-events:none;
@@ -133,171 +115,163 @@ nav{
 }
 @keyframes breathe{ 0%,100%{ opacity:.3; transform:scale(1); } 50%{ opacity:1; transform:scale(1.5); } }
 @media(prefers-reduced-motion:reduce){ .pulse{ animation:none; opacity:.7; } }
-
 .btn{
   display:inline-block; padding:.75rem 2rem;
-  font-family:var(--body); font-size:.85rem; font-weight:600;
-  letter-spacing:.1em; text-transform:uppercase;
+  font-size:.85rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
   border:1px solid var(--glow); color:var(--glow);
   border-radius:2px; transition:background .2s, color .2s;
 }
 .btn:hover{ background:var(--glow); color:var(--soil); }
 
 /* ── ABOUT ── */
-#about{ padding-block:var(--section-gap); }
+#about{ padding-block:var(--gap); }
 .about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:4rem;
-  align-items:center;
+  display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
 }
-.about-copy p{ color:var(--spore-dim); margin-top:1.2rem; max-width:46ch; }
-.about-copy p + p{ margin-top:.8rem; }
-.about-copy .divider{ margin-bottom:1.6rem; }
-
-.about-values{
-  display:grid; gap:1.2rem;
-}
+.about-copy p{ color:var(--spore-dim); margin-top:1rem; max-width:46ch; }
+.about-values{ display:grid; gap:1.2rem; }
 .value-card{
   background:var(--soil-mid); border:1px solid var(--soil-top);
-  border-radius:4px; padding:1.4rem 1.6rem;
-  transition:border-color .25s;
+  border-radius:4px; padding:1.4rem 1.6rem; transition:border-color .25s;
 }
 .value-card:hover{ border-color:var(--glow-dim); }
 .value-card h3{
   font-family:var(--display); font-weight:400; font-size:1.15rem;
-  margin-bottom:.4rem; color:var(--spore);
+  margin-bottom:.4rem;
 }
 .value-card p{ color:var(--spore-dim); font-size:.9rem; line-height:1.6; }
 
-@media(max-width:760px){
-  .about-grid{ grid-template-columns:1fr; gap:2.8rem; }
-}
+@media(max-width:760px){ .about-grid{ grid-template-columns:1fr; gap:2.8rem; } }
 
 /* ── TEAM ── */
 #team{
-  padding-block:var(--section-gap);
+  padding-block:var(--gap);
   background:var(--soil-mid);
   border-top:1px solid var(--soil-top);
   border-bottom:1px solid var(--soil-top);
 }
 .team-header{ text-align:center; margin-bottom:3.5rem; }
 .team-header .divider{ margin-inline:auto; }
-
+.team-founders-label{
+  font-size:.7rem; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--spore-mute); margin-bottom:1rem;
+}
 .team-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;
 }
 .member{
   background:var(--soil); border:1px solid var(--soil-top);
-  border-radius:4px; padding:2rem 1.6rem;
-  text-align:center; transition:border-color .25s;
+  border-radius:4px; padding:2rem 1.6rem; transition:border-color .25s;
 }
 .member:hover{ border-color:var(--glow-dim); }
 .member-avatar{
-  width:72px; height:72px; border-radius:50%;
+  width:64px; height:64px; border-radius:50%;
   background:var(--soil-top); margin-inline:auto;
   display:flex; align-items:center; justify-content:center;
   margin-bottom:1.2rem; font-family:var(--display);
-  font-size:1.6rem; color:var(--glow); border:1px solid var(--soil-top);
+  font-size:1.5rem; color:var(--glow);
 }
 .member h3{
-  font-family:var(--display); font-weight:400; font-size:1.3rem;
-  letter-spacing:-.01em; margin-bottom:.3rem;
+  font-family:var(--display); font-weight:400; font-size:1.25rem;
+  letter-spacing:-.01em; margin-bottom:.3rem; text-align:center;
 }
-.member-role{ font-size:.75rem; letter-spacing:.18em; text-transform:uppercase; color:var(--glow); }
-.member p{ color:var(--spore-dim); font-size:.88rem; margin-top:.9rem; line-height:1.65; }
+.member-role{
+  font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--glow); text-align:center; margin-bottom:1rem;
+}
+.member p{ color:var(--spore-dim); font-size:.88rem; line-height:1.65; }
+.member-skills{
+  display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1rem;
+}
+.skill{
+  font-size:.68rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  padding:.2rem .55rem; border:1px solid var(--soil-top);
+  border-radius:2px; color:var(--spore-mute);
+}
+
+.team-size{
+  margin-top:3rem; text-align:center;
+  padding:1.4rem; border:1px solid var(--soil-top);
+  border-radius:4px; max-width:480px; margin-inline:auto;
+}
+.team-size p{ color:var(--spore-dim); font-size:.9rem; }
+.team-size strong{ color:var(--spore); }
 
 @media(max-width:720px){
   .team-grid{ grid-template-columns:1fr; max-width:360px; margin-inline:auto; }
 }
 
 /* ── GAMES ── */
-#games{ padding-block:var(--section-gap); }
+#games{ padding-block:var(--gap); }
 .games-header{ margin-bottom:3.5rem; }
-.games-header p{ color:var(--spore-dim); margin-top:1rem; max-width:44ch; }
-.games-header .divider{ margin-bottom:1.2rem; }
-
-.games-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(320px,1fr));
-  gap:1.5rem;
-}
+.games-header p{ color:var(--spore-dim); margin-top:1rem; max-width:48ch; }
 .game-card{
   background:var(--soil-mid); border:1px solid var(--soil-top);
-  border-radius:4px; overflow:hidden; transition:border-color .25s;
+  border-radius:4px; overflow:hidden;
+  display:grid; grid-template-columns:1fr 1fr; gap:0;
 }
-.game-card:hover{ border-color:var(--glow-dim); }
 .game-thumb{
-  aspect-ratio:16/9;
+  aspect-ratio:4/3;
   background:var(--soil-top);
   display:flex; align-items:center; justify-content:center;
-  font-size:.8rem; letter-spacing:.1em; text-transform:uppercase;
+  font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
   color:var(--spore-mute);
 }
-.game-info{ padding:1.4rem; }
+.game-info{ padding:2.4rem; display:flex; flex-direction:column; justify-content:center; }
+.game-info .eyebrow{ margin-bottom:.8rem; }
 .game-info h3{
-  font-family:var(--display); font-weight:400; font-size:1.25rem;
-  margin-bottom:.5rem;
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(1.5rem,3vw,2rem); margin-bottom:.8rem;
 }
-.game-info p{ color:var(--spore-dim); font-size:.9rem; line-height:1.6; }
-.game-tags{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+.game-info p{ color:var(--spore-dim); font-size:.95rem; line-height:1.7; }
+.game-tags{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.4rem; }
 .tag{
   font-size:.7rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
   padding:.25rem .65rem; border:1px solid var(--soil-top);
   border-radius:2px; color:var(--spore-dim);
 }
 
-/* placeholder card */
-.game-card.tbd{ border-style:dashed; }
-.game-card.tbd .game-thumb{ background:transparent; }
+@media(max-width:680px){
+  .game-card{ grid-template-columns:1fr; }
+  .game-thumb{ aspect-ratio:16/9; }
+}
 
 /* ── CONTACT ── */
 #contact{
-  padding-block:var(--section-gap);
+  padding-block:var(--gap);
   background:var(--soil-mid);
   border-top:1px solid var(--soil-top);
 }
-.contact-inner{
-  display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;
-}
+.contact-inner{ display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
 .contact-copy p{ color:var(--spore-dim); margin-top:1rem; max-width:40ch; }
-.contact-copy .divider{ margin-bottom:1.2rem; }
 .contact-link{
   display:inline-flex; align-items:center; gap:.5rem;
   color:var(--glow); border-bottom:1px solid var(--glow);
-  padding-bottom:.15rem; margin-top:1.6rem;
-  font-size:.95rem; transition:opacity .2s;
+  padding-bottom:.15rem; margin-top:1.6rem; font-size:.95rem; transition:opacity .2s;
 }
 .contact-link:hover{ opacity:.7; }
-
 .contact-socials{ margin-top:2rem; }
 .contact-socials p{ color:var(--spore-dim); font-size:.85rem; margin-bottom:.8rem; }
 .social-links{ display:flex; gap:1rem; flex-wrap:wrap; }
 .social-link{
-  font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
-  font-weight:600; color:var(--spore-dim); border:1px solid var(--soil-top);
+  font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+  color:var(--spore-dim); border:1px solid var(--soil-top);
   padding:.4rem .9rem; border-radius:2px; transition:color .2s, border-color .2s;
 }
 .social-link:hover{ color:var(--glow); border-color:var(--glow-dim); }
-
 .contact-note{
   background:var(--soil); border:1px solid var(--soil-top);
-  border-radius:4px; padding:2rem; align-self:start;
+  border-radius:4px; padding:2rem;
 }
 .contact-note .eyebrow{ margin-bottom:1rem; }
 .contact-note p{ color:var(--spore-dim); font-size:.9rem; line-height:1.7; }
 .contact-note p + p{ margin-top:.8rem; }
 
-@media(max-width:760px){
-  .contact-inner{ grid-template-columns:1fr; gap:2.5rem; }
-}
+@media(max-width:760px){ .contact-inner{ grid-template-columns:1fr; gap:2.5rem; } }
 
 /* ── FOOTER ── */
 footer{
-  padding-block:2rem;
-  border-top:1px solid var(--soil-top);
+  padding-block:2rem; border-top:1px solid var(--soil-top);
   font-size:.8rem; color:var(--spore-mute);
 }
 .footer-inner{
@@ -309,7 +283,7 @@ footer{
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
   <div class="container nav-inner">
     <a class="nav-logo" href="#hero">Mycelium<span>.</span></a>
@@ -327,7 +301,7 @@ footer{
   </div>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-content">
@@ -339,21 +313,21 @@ footer{
   </div>
 </section>
 
-<!-- ── ABOUT ── -->
+<!-- ABOUT -->
 <section id="about">
   <div class="container about-grid">
     <div class="about-copy">
       <p class="eyebrow">Who we are</p>
       <h2 class="section-title">A small studio with a simple idea</h2>
       <hr class="divider">
-      <p>Mycelium is a three-person independent game studio. We started with one question: what if we just made games we actually want to play?</p>
+      <p>Mycelium is a six-person independent game studio. We started with one question: what if we just made games we actually want to play?</p>
       <p>No chasing trends. No engagement loops designed to extract time. Just games with care put into every corner — because we'll be playing them too.</p>
-      <p>Like mycelium itself, we grow quietly and connect things. Small team, honest work, games worth your time.</p>
+      <p>We hope to become a studio you trust. One game at a time.</p>
     </div>
     <div class="about-values">
       <div class="value-card">
         <h3>Play first</h3>
-        <p>Every decision starts with the question: "Is this fun?" If the team isn't enjoying it in playtests, it's not going in.</p>
+        <p>Every decision starts with one question: "Is this fun?" If the team isn't enjoying it in playtests, it's not going in.</p>
       </div>
       <div class="value-card">
         <h3>Honest craft</h3>
@@ -367,73 +341,89 @@ footer{
   </div>
 </section>
 
-<!-- ── TEAM ── -->
+<!-- TEAM -->
 <section id="team">
   <div class="container">
     <div class="team-header">
       <p class="eyebrow">The team</p>
-      <h2 class="section-title">Three people, one studio</h2>
+      <h2 class="section-title">The people behind the studio</h2>
       <hr class="divider">
     </div>
+
+    <p class="team-founders-label">Founders</p>
     <div class="team-grid">
+
       <div class="member">
         <div class="member-avatar" aria-hidden="true">C</div>
         <h3>Connor</h3>
-        <p class="member-role">Co-founder</p>
-        <p>The one who started asking "what if we just made something?" Keeps the team honest and the coffee warm.</p>
+        <p class="member-role">Lead Vision &amp; Director</p>
+        <p>The driving force behind the studio's direction. Connor has a keen eye for interesting mechanics and knows a good game when he sees one — then figures out how to make it. Keeps the team focused and moving.</p>
+        <div class="member-skills">
+          <span class="skill">Programming</span>
+          <span class="skill">Game Design</span>
+          <span class="skill">Sound</span>
+          <span class="skill">Team Lead</span>
+        </div>
       </div>
+
       <div class="member">
         <div class="member-avatar" aria-hidden="true">R</div>
         <h3>Ravi</h3>
-        <p class="member-role">Co-founder</p>
-        <p>Turns ideas into systems that feel good to interact with. Has a talent for finding the fun in unexpected places.</p>
+        <p class="member-role">Creative Visionary</p>
+        <p>The best person to bounce an idea off. Ravi dreams big and isn't afraid of ambition — he'll push a concept somewhere nobody else thought to look. The reason the studio's worlds feel alive.</p>
+        <div class="member-skills">
+          <span class="skill">3D Modelling</span>
+          <span class="skill">Environments</span>
+          <span class="skill">Shaders</span>
+        </div>
       </div>
+
       <div class="member">
         <div class="member-avatar" aria-hidden="true">R</div>
         <h3>Rhys</h3>
-        <p class="member-role">Co-founder</p>
-        <p>Brings the visual instincts and the stubbornness to make things look exactly right. Cares deeply about the details.</p>
+        <p class="member-role">Technical Lead</p>
+        <p>Quiet until you see what he's built. Rhys understands systems at a level that makes the rest of us feel slow — what might take a year, he'll have running in two weeks. Fully committed to the craft and the lifestyle that comes with it.</p>
+        <div class="member-skills">
+          <span class="skill">Systems</span>
+          <span class="skill">Engine</span>
+          <span class="skill">Tools</span>
+        </div>
       </div>
+
+    </div>
+
+    <div class="team-size">
+      <p><strong>Six people total</strong> — three founders and three more who help bring it all together. Small enough to move fast, big enough to make it real.</p>
     </div>
   </div>
 </section>
 
-<!-- ── GAMES ── -->
+<!-- GAMES -->
 <section id="games">
   <div class="container">
     <div class="games-header">
       <p class="eyebrow">Our games</p>
-      <h2 class="section-title">What we're growing</h2>
+      <h2 class="section-title">What we're working on</h2>
       <hr class="divider">
-      <p>We're early. More will be announced when it's ready to show.</p>
+      <p>We're currently heads-down on our first project. We'll share more when it's ready to be seen.</p>
     </div>
-    <div class="games-grid">
-      <!-- Add real game cards here as projects launch -->
-      <div class="game-card tbd">
-        <div class="game-thumb">Coming soon</div>
-        <div class="game-info">
-          <h3>Project TBA</h3>
-          <p>Something's in the works. We'll share it when it's ready to be seen.</p>
-          <div class="game-tags">
-            <span class="tag">In development</span>
-          </div>
-        </div>
-      </div>
-      <div class="game-card tbd">
-        <div class="game-thumb">Coming soon</div>
-        <div class="game-info">
-          <h3>Project TBA</h3>
-          <p>Early ideas that might become something. Or might not. That's part of the fun.</p>
-          <div class="game-tags">
-            <span class="tag">Exploring</span>
-          </div>
+
+    <div class="game-card">
+      <div class="game-thumb" aria-hidden="true">Coming soon</div>
+      <div class="game-info">
+        <p class="eyebrow">Current project</p>
+        <h3>Untitled Project</h3>
+        <p>We're working on something we're proud of. When the time is right, you'll be the first to know. Stay close.</p>
+        <div class="game-tags">
+          <span class="tag">In development</span>
+          <span class="tag">Announcement soon</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="container contact-inner">
     <div class="contact-copy">
@@ -445,22 +435,21 @@ footer{
       <div class="contact-socials">
         <p>Find us online</p>
         <div class="social-links">
-          <!-- Update these hrefs with real links when ready -->
-          <a class="social-link" href="#" aria-label="Twitter/X">Twitter</a>
-          <a class="social-link" href="#" aria-label="Instagram">Instagram</a>
-          <a class="social-link" href="#" aria-label="itch.io">itch.io</a>
+          <a class="social-link" href="#">Twitter</a>
+          <a class="social-link" href="#">Instagram</a>
+          <a class="social-link" href="#">itch.io</a>
         </div>
       </div>
     </div>
     <div class="contact-note">
       <p class="eyebrow">Press &amp; media</p>
       <p>Working on a piece and need assets, quotes, or a chat? Drop us an email with "Press" in the subject — we'll get back to you quickly.</p>
-      <p>We're a small team so we might take a day or two, but we do read everything.</p>
+      <p>We're a small team so we might take a day or two, but we read everything.</p>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
   <div class="container footer-inner">
     <span class="footer-logo">Mycelium<span>.</span></span>
